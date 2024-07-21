@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/guilherme/Developer/Dev-sistemas/contatos/contatos.csproj": {}
+    "/media/guilherme/Developer/Dev-sistemas/ControleContatos/contatos.csproj": {}
   },
   "projects": {
-    "/media/guilherme/Developer/Dev-sistemas/contatos/contatos.csproj": {
+    "/media/guilherme/Developer/Dev-sistemas/ControleContatos/contatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/guilherme/Developer/Dev-sistemas/contatos/contatos.csproj",
+        "projectUniqueName": "/media/guilherme/Developer/Dev-sistemas/ControleContatos/contatos.csproj",
         "projectName": "contatos",
-        "projectPath": "/media/guilherme/Developer/Dev-sistemas/contatos/contatos.csproj",
+        "projectPath": "/media/guilherme/Developer/Dev-sistemas/ControleContatos/contatos.csproj",
         "packagesPath": "/home/guilherme/.nuget/packages/",
-        "outputPath": "/media/guilherme/Developer/Dev-sistemas/contatos/obj/",
+        "outputPath": "/media/guilherme/Developer/Dev-sistemas/ControleContatos/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/guilherme/.nuget/NuGet/NuGet.Config"

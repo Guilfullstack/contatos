@@ -18,7 +18,7 @@ public class HomeController : Controller
         HomeModel home = new HomeModel();
         home.Email = "guiadventista@gmail";
         home.Nome = "Guilherme";
-        return View();
+        return View(home);
     }
 
     public IActionResult Privacy()
