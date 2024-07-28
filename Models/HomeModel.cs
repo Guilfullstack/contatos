@@ -9,5 +9,10 @@ namespace contatos.Models
     {
         public string Nome { get; set; }
         public string Email { get; set; }
+        public HomeModel()
+        {
+            Nome = string.Empty;  // Inicialize com uma string vazia
+            Email = string.Empty; // Inicialize com uma string vazia
+        }
     }
 }

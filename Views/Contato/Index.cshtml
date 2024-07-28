@@ -1,4 +1,4 @@
-@model HomeModel
+@model List<ControleContatos.Models.ContatoModel>//Especifica a model que a página vai usar
 @{
     ViewData["Title"] = "Lista Contatos";
 }
@@ -18,20 +18,27 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto@gmail.com</td>
-                <td>444444444</td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <a roule="button" class="btn btn-primary" asp-controller="Contato"
-                            asp-action="Editar">Editar</a>
-                        <a roule="button" class="btn btn-danger" asp-controller="Contato"
-                            asp-action="ApagarConfirmacao">Deletar</a>
-                    </div>
-                </td>
-            </tr>
+
+            @if(Model!=null&&Model.Any()){
+                foreach(var contato in Model){//Exibe a lista de contatos
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>@contato.Nome</td>
+                        <td>@contato.Email</td>
+                        <td>@contato.Celular</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a roule="button" class="btn btn-primary" asp-controller="Contato"
+                                    asp-action="Editar" asp-route-id="@contato.Id">Editar</a>
+                                <a roule="button" class="btn btn-danger" asp-route-id="@contato.Id"  asp-controller="Contato"
+                                    asp-action="ApagarConfirmacao">Deletar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }else{
+                <tr class="add"><td valign="top" colspan="5">Nenhum contato encontrado</td></tr>
+            }
            
         </tbody>
     </table>
