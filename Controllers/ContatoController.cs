@@ -24,24 +24,36 @@ namespace ControleContatos.Controllers
 
         public IActionResult Index()
         {
-            var listaContatos=_contatoRepository.BuscarTodos();
+            var listaContatos = _contatoRepository.BuscarTodos();
             return View(listaContatos);
         }
-        public IActionResult Criar(){
+        public IActionResult Criar()
+        {
             return View();
         }
-        public IActionResult Editar(){
-            return View();
+        public IActionResult Editar(int id)
+        {
+            var contato = _contatoRepository.BuscarContatoId(id);
+            return View(contato);
         }
-         public IActionResult ApagarConfirmacao(){
+        public IActionResult ApagarConfirmacao()
+        {
             return View();
         }
         //Metoto post para criar contato
         [HttpPost]
-        public IActionResult Criar(ContatoModel contatoModel){
+        public IActionResult Criar(ContatoModel contatoModel)
+        {
             _contatoRepository.AddContato(contatoModel);
             return RedirectToAction("Index");
         }
+        [HttpPost]
+        public IActionResult Alterar(ContatoModel contato){
+            _contatoRepository.Atualizar(contato);
+            return RedirectToAction("Index");
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
