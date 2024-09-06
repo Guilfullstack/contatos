@@ -9,55 +9,55 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = contatos
 build_property.RootNamespace = contatos
-build_property.ProjectDir = /home/guilherme/Dev-sistemas/ControleContatos/
+build_property.ProjectDir = /home/guilherme/Dev-sistemas/contatos-controle/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/guilherme/Dev-sistemas/ControleContatos
+build_property.MSBuildProjectDirectory = /home/guilherme/Dev-sistemas/contatos-controle
 build_property._RazorSourceGeneratorDebug = 
 
-[/media/guilherme/Developer/Dev-sistemas/ControleContatos/Views/Contato/ApagarConfirmacao.cshtml]
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/Contato/ApagarConfirmacao.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXBhZ2FyQ29uZmlybWFjYW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/media/guilherme/Developer/Dev-sistemas/ControleContatos/Views/Contato/Criar.cshtml]
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/Contato/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Q3JpYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/media/guilherme/Developer/Dev-sistemas/ControleContatos/Views/Contato/Editar.cshtml]
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/Contato/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = RWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/media/guilherme/Developer/Dev-sistemas/ControleContatos/Views/Contato/Index.cshtml]
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/Contato/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = SW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/media/guilherme/Developer/Dev-sistemas/ControleContatos/Views/Home/Index.cshtml]
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = SW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/media/guilherme/Developer/Dev-sistemas/ControleContatos/Views/Home/Privacy.cshtml]
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/media/guilherme/Developer/Dev-sistemas/ControleContatos/Views/Shared/Error.cshtml]
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = RXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/media/guilherme/Developer/Dev-sistemas/ControleContatos/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = X1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/media/guilherme/Developer/Dev-sistemas/ControleContatos/Views/_ViewImports.cshtml]
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = X1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/media/guilherme/Developer/Dev-sistemas/ControleContatos/Views/_ViewStart.cshtml]
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = X1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/media/guilherme/Developer/Dev-sistemas/ControleContatos/Views/Shared/_Layout.cshtml]
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = X0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-kg1bvbygbg

@@ -12,5 +12,6 @@ namespace ControleContatos.Repository
         public List<ContatoModel> BuscarTodos();
         public ContatoModel BuscarContatoId(int id);
         public ContatoModel Atualizar(ContatoModel contato);
+        public bool ApagarContato(int id);
     }
 }

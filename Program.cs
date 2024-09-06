@@ -47,4 +47,5 @@ COMANDOS:
 dotnet tool install --global dotnet-ef : Garantir poder usar o comando dotnet ef
 dotnet ef migrations add ContatosTabela --context BancoContext :Adicionar a migração
 dotnet ef database update -c BancoContext : sob as alterações para o banco
+
 */

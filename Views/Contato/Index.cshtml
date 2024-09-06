@@ -18,11 +18,13 @@
             </tr>
         </thead>
         <tbody>
-
+            
             @if(Model!=null&&Model.Any()){
+                int contador=0;
+                
                 foreach(var contato in Model){//Exibe a lista de contatos
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">@contador</th>
                         <td>@contato.Nome</td>
                         <td>@contato.Email</td>
                         <td>@contato.Celular</td>
@@ -35,6 +37,7 @@
                             </div>
                         </td>
                     </tr>
+                    contador++;
                 }
             }else{
                 <tr class="add"><td valign="top" colspan="5">Nenhum contato encontrado</td></tr>

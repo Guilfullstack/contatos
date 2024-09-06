@@ -4112,11 +4112,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/guilherme/Dev-sistemas/ControleContatos/contatos.csproj",
+      "projectUniqueName": "/home/guilherme/Dev-sistemas/contatos-controle/contatos.csproj",
       "projectName": "contatos",
-      "projectPath": "/home/guilherme/Dev-sistemas/ControleContatos/contatos.csproj",
+      "projectPath": "/home/guilherme/Dev-sistemas/contatos-controle/contatos.csproj",
       "packagesPath": "/home/guilherme/.nuget/packages/",
-      "outputPath": "/home/guilherme/Dev-sistemas/ControleContatos/obj/",
+      "outputPath": "/home/guilherme/Dev-sistemas/contatos-controle/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/guilherme/.nuget/NuGet/NuGet.Config"

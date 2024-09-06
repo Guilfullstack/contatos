@@ -36,10 +36,6 @@ namespace ControleContatos.Controllers
             var contato = _contatoRepository.BuscarContatoId(id);
             return View(contato);
         }
-        public IActionResult ApagarConfirmacao()
-        {
-            return View();
-        }
         //Metoto post para criar contato
         [HttpPost]
         public IActionResult Criar(ContatoModel contatoModel)
@@ -52,7 +48,15 @@ namespace ControleContatos.Controllers
             _contatoRepository.Atualizar(contato);
             return RedirectToAction("Index");
         }
-
+         public IActionResult ApagarConfirmacao(int id)
+        {
+            ContatoModel contato=_contatoRepository.BuscarContatoId(id);
+            return View(contato);
+        }
+        public IActionResult Apagar(int id){
+            _contatoRepository.ApagarContato(id);
+            return RedirectToAction("Index");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
