@@ -12,13 +12,12 @@ internal class Program
         builder.Configuration.AddJsonFile("appsettings.json");
         //SERVIÇOS E INJEÇÃO DE DEPENDENCIA  
         // Add services to the container.
-        builder.Services.AddControllersWithViews();
+        builder.Services.AddControllersWithViews();//.AddDataAnnotationsLocalization();//Adicionando dependencia de localização
         //Configure DbContext to use SQL Server
         builder.Services.AddDbContext<BancoContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
         builder.Services.AddScoped<IContatoRepository,ContatoRepository>();//configurtaa para quando a interface for usada, utilizar a classe
         var app = builder.Build();
-        
         //Configura dependendo do ambiente
         if (!app.Environment.IsDevelopment())
         {
@@ -27,7 +26,7 @@ internal class Program
         }else{
             app.UseDeveloperExceptionPage();
         }
-
+      //  app.UseRequestLocalization();
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 

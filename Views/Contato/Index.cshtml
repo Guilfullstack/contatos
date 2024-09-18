@@ -6,10 +6,26 @@
     <a class="btn btn-primary" asp-controller="Contato" asp-action="Criar">Adicionar novo contato</a>
 </div>
 <div class="text-center">
+    @{
+        //Mensagem de sucesso e erro
+        if(TempData["Menssagem-sucesso"]!=null){
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+                @TempData["Menssagem-sucesso"]
+            </div>
+        }
+        if(TempData["Menssagem-erro"]!=null){
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+                @TempData["sagem-erro"]
+            </div>
+        }
+    }
+
     <h1 class="display-4">Listagem de Contatos</h1>
-    <table class="table">
+    <table class="table table-striped" id="table-contatos">
         <thead>
-            <tr>
+            <tr class="table-primary">
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
@@ -20,10 +36,10 @@
         <tbody>
             
             @if(Model!=null&&Model.Any()){
-                int contador=0;
+                int contador=1;
                 
                 foreach(var contato in Model){//Exibe a lista de contatos
-                    <tr>
+                    <tr class="table-secondary">
                         <th scope="row">@contador</th>
                         <td>@contato.Nome</td>
                         <td>@contato.Email</td>

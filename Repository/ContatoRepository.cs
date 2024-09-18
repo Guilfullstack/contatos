@@ -49,7 +49,7 @@ namespace ControleContatos.Repository
             return dbContato;
         }
 
-        public bool ApagarContato(int id)
+        public async Task<bool> ApagarContato(int id)
         {
              ContatoModel contatoDb= BuscarContatoId(id);
             if (contatoDb==null) throw new Exception("Houve um erro na deleção do contato");

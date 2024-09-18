@@ -19,4 +19,17 @@ html {
 
 body {
   margin-bottom: 60px;
+  /* background-color: #258cfb; */
+}
+
+.field-validation-error{
+  color: red;
+}
+.close-alert{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  border-radius: 15px;
+  width: 30px;
+  height: 31px;
 }
