@@ -17,6 +17,7 @@ internal class Program
         builder.Services.AddDbContext<BancoContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
         builder.Services.AddScoped<IContatoRepository,ContatoRepository>();//configurtaa para quando a interface for usada, utilizar a classe
+        builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         var app = builder.Build();
         //Configura dependendo do ambiente
         if (!app.Environment.IsDevelopment())

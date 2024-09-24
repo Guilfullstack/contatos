@@ -37,8 +37,7 @@ namespace ControleContatos.Repository
         public ContatoModel Atualizar(ContatoModel contato)
         {
             ContatoModel dbContato = BuscarContatoId(contato.Id);
-            Console.WriteLine("ID DO CONTATO", dbContato.Id);
-
+            
             if (dbContato == null) throw new Exception("Erro ao atualizar o contato");
             // Copia os valores do objeto 'contato' para 'dbContato'
             dbContato.Nome = contato.Nome;

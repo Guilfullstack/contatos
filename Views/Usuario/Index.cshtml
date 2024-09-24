@@ -1,0 +1,66 @@
+@model List<ControleContatos.Models.UsuarioModel>//Especifica a model que a página vai usar
+@{
+    ViewData["Title"] = "Lista Usuarios";
+}
+<div class="d-grid grap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn-primary" asp-controller="Usuario" asp-action="Criar">Adicionar novo usuário</a>
+</div>
+<div class="text-center">
+    @{  
+        //Mensagem de sucesso e erro
+        if(TempData["Menssagem-sucesso"]!=null){
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+                @TempData["Menssagem-sucesso"]
+            </div>
+        }
+        if(TempData["Menssagem-erro"]!=null){
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+                @TempData["sagem-erro"]
+            </div>
+        }
+    }
+
+    <h1 class="display-4">Listagem de Usuários</h1>
+    <table class="table table-striped" id="table-usuarios">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Login</th>
+                <th scope="col">Data cadastro</th>
+                 <th scope="col">Alteração</th>
+                <th scope="col">#</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            @if(Model!=null&&Model.Any()){
+                int contador=1;
+                
+                foreach(var usuario in Model){//Exibe a lista de usuarios
+                    <tr class="table-secondary">
+                        <th scope="row">@contador</th>
+                        <td>@usuario.Nome</td>
+                        <td>@usuario.Email</td>
+                         <td>@usuario.Login</td>
+                        <td>@usuario.DataCadastro</td>
+                         <td>@usuario.DataAtualizacao</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a roule="button" class="btn btn-primary" asp-controller="Usuario"
+                                    asp-action="Editar" asp-route-id="@usuario.Id">Editar</a>
+                                <a roule="button" class="btn btn-danger" asp-route-id="@usuario.Id"  asp-controller="Usuario"
+                                    asp-action="ApagarConfirmacao">Deletar</a>
+                            </div>
+                        </td>
+                    </tr>
+                    contador++;
+                }
+            }
+           
+        </tbody>
+    </table>
+</div>
