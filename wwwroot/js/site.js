@@ -6,7 +6,7 @@
 function getDataTable(id) {
     $(id).DataTable({
         language: {
-            url: "//cdn.datatables.net/plug-ins/1.13.5/i18n/pt-BR.json"
+            url: '//cdn.datatables.net/plug-ins/2.1.6/i18n/pt-BR.json',
         }
     });
 }

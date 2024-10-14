@@ -1,8 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using contatos.Models;
-
-namespace contatos.Controllers;
+namespace ControleContatos.Controllers;
 
 public class HomeController : Controller
 {
@@ -15,10 +14,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        HomeModel home = new HomeModel();
-        home.Email = "guiadventista@gmail";
-        home.Nome = "Guilherme";
-        return View(home);
+       
+        return View();
     }
 
     public IActionResult Privacy()

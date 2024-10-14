@@ -3,7 +3,7 @@ using ControleContatos.Enums;
 
 namespace ControleContatos.Models
 {
-    public class UsuarioModel
+    public class UsuarioSemSenhaModel
     {
         public int Id { get; set; }
 
@@ -14,27 +14,20 @@ namespace ControleContatos.Models
         public string Email { get; set; }
         [Required(ErrorMessage = "A dicione o login do usuario")]
         public string Login { get; set; }
-        [Required(ErrorMessage = "A dicione a senha do usuario")]
-        public string Senha { get; set; }
+       
         [Required(ErrorMessage = "A dicione o perfil do usuario")]
         public PerfilEnum? Perfil{ get; set; }
-        public DateTime DataCadastro { get; set; }
-        public DateTime? DataAtualizacao { get; set; }
-        public UsuarioModel(int id, string name, string email,string login,string senha,PerfilEnum perfil,DateTime dataCadastro,DateTime? dataAtualizacao)
+      
+        public UsuarioSemSenhaModel(int id, string name, string email,string login,PerfilEnum perfil)
         {
             Id=id;
             Nome=name;
             Email=email;
             Login=login;
-            Senha=senha;
             Perfil=perfil;
-            DataCadastro=dataCadastro;
-            DataAtualizacao=dataAtualizacao;
+          
         }
-        public UsuarioModel( ) { }
-        public bool ValidarSenha(string senha){
-            return Senha==senha;
-        }
+        public UsuarioSemSenhaModel( ) { }
 
     }
 }

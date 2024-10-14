@@ -42,6 +42,8 @@ namespace ControleContatos.Repository
                 dbUsuario.Login = usuario.Login;
                 dbUsuario.Perfil = usuario.Perfil;
                 dbUsuario.DataAtualizacao = DateTime.Now;
+                _bancoContext.Usuarios.Update(dbUsuario);
+                _bancoContext.SaveChanges();
                 return dbUsuario;
             }
             catch (System.Exception erro)
@@ -51,9 +53,15 @@ namespace ControleContatos.Repository
 
         }
 
-        public UsuarioModel BuscarPorId(int id)
+        public UsuarioModel? BuscarPorId(int id)
         {
             return _bancoContext.Usuarios.FirstOrDefault(u => u.Id == id);
+        }
+
+        public UsuarioModel BuscarPorLogin(string login)
+        {
+            return _bancoContext.Usuarios.FirstOrDefault(x=> x.Login.ToUpper() == login.ToUpper());
+            
         }
 
         public List<UsuarioModel> BuscarTodosUsuarios()
@@ -66,24 +74,18 @@ namespace ControleContatos.Repository
             }
             catch (System.Exception erro)
             {
-                
+
                 throw new Exception($"Erro ao buscar lista de contatos: {erro.Message}");
             }
         }
 
-        public UsuarioModel Deletar(int id)
+        public async Task<bool> Deletar(int id)
         {
-            try
-            {
-                UsuarioModel usuarioDb = BuscarPorId(id);
-                if (usuarioDb == null) throw new Exception("Houve um erro na deleção do contato");
-                _bancoContext.Usuarios.Remove(usuarioDb);
-                return usuarioDb;
-            }
-            catch (System.Exception erro)
-            {
-                throw new Exception($"Erro ao deletar contato: {erro.Message}");
-            }
+            UsuarioModel usuarioDb = BuscarPorId(id);
+            if (usuarioDb == null) throw new Exception("Houve um erro na deleção do contato");
+            _bancoContext.Usuarios.Remove(usuarioDb);
+            _bancoContext.SaveChanges();
+            return await Task.FromResult(true);
         }
     }
 }

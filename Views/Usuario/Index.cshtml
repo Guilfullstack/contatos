@@ -17,7 +17,7 @@
         if(TempData["Menssagem-erro"]!=null){
             <div class="alert alert-danger" role="alert">
                 <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
-                @TempData["sagem-erro"]
+                @TempData["Menssagem-erro"]
             </div>
         }
     }
@@ -30,6 +30,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Login</th>
+                <th scope="col">Perfil</th>
                 <th scope="col">Data cadastro</th>
                  <th scope="col">Alteração</th>
                 <th scope="col">#</th>
@@ -46,6 +47,7 @@
                         <td>@usuario.Nome</td>
                         <td>@usuario.Email</td>
                          <td>@usuario.Login</td>
+                         <td>@(usuario.Perfil==ControleContatos.Enums.PerfilEnum.Adm?"Administrador":"Padrão")</td>
                         <td>@usuario.DataCadastro</td>
                          <td>@usuario.DataAtualizacao</td>
                         <td>

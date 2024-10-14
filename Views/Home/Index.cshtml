@@ -1,8 +1,23 @@
-﻿@model HomeModel
-@{
+﻿@{
     ViewData["Title"] = "Home";
 }
-
+ @{
+    //Mensagem de sucesso e erro
+    if (TempData["Menssagem-sucesso"] != null)
+    {
+                    <div class="alert alert-success" role="alert">
+                        <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+            @TempData["Menssagem-sucesso"]
+                    </div>
+    }
+    if (TempData["Menssagem-erro"] != null)
+    {
+                    <div class="alert alert-danger" role="alert">
+                        <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+            @TempData["sagem-erro"]
+                    </div>
+    }
+}
 <div class="text-center">
     <h1 class="display-4">Bem vindo ao meu site!</h1>
     <p>Sistema de controle de contatos</p>
