@@ -19,21 +19,22 @@ namespace ControleContatos.Helper
         }
         public UsuarioModel? BuscarSecaoDoUsuario()
         {
-            string? secaoUsuario=_HttpContextAccessor.HttpContext!.Session.GetString("SecaoUsuarioLogado");
-            if (secaoUsuario == null)return null;
+            string? sessaoUsuario=_HttpContextAccessor.HttpContext!.Session.GetString("sessaoUsuarioLogado");
+            if(string.IsNullOrEmpty(sessaoUsuario))return null;
         
-           return JsonConvert.DeserializeObject<UsuarioModel>(secaoUsuario);
+           return JsonConvert.DeserializeObject<UsuarioModel>(sessaoUsuario);
         }
 
         public void CriarSecaoDoUsuario(UsuarioModel usuarioModel)
         {
-            string? secaoUsuario= JsonConvert.SerializeObject(usuarioModel);
-            _HttpContextAccessor.HttpContext!.Session.SetString("SecaoUsuarioLogado",secaoUsuario);
+            string? sessaoUsuario= JsonConvert.SerializeObject(usuarioModel);
+            _HttpContextAccessor.HttpContext!.Session.SetString("sessaoUsuarioLogado",sessaoUsuario);
         }
 
         public void RemoverSecaoDoUsuario()
         {
-            _HttpContextAccessor.HttpContext!.Session.Remove("SecaoUsuarioLogado");
+            _HttpContextAccessor.HttpContext!.Session.Remove("sessaoUsuarioLogado");
         }
+        
     }
 }

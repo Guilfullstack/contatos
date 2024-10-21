@@ -50,7 +50,9 @@ namespace ControleContatos.Controllers
                     {
                         if (usuarioModel.ValidarSenha(loginModel.Senha!))
                         {
-                            TempData["Menssagem-sucesso"] = $"Usuário logado com sucesso!";
+                            _secao.CriarSecaoDoUsuario(usuarioModel);
+                            var usuario=_secao.BuscarSecaoDoUsuario();
+                            TempData["Menssagem-sucesso"] = $"Usuário logado com sucesso! "+usuario.Nome;
                             return RedirectToAction("Index", "Home");
                         }
                         TempData["Menssagem-erro"] = "Senha do usuário inválida!";
