@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using ControleContatos.Filters;
 using ControleContatos.Models;
 using ControleContatos.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +12,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ControleContatos.Controllers
 {
-    //[Route("[controller]")]
+    [PaginaParaUsuarioLogado]
     public class ContatoController : Controller
     {
         private readonly ILogger<ContatoController> _logger;

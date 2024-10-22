@@ -12,10 +12,13 @@
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-controller="Contato" asp-action="Index">Contatos</a>
         </li>
+        @if (Model.Perfil==ControleContatos.Enums.PerfilEnum.Adm)
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuarios</a>
+            </li>
+        }
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuarios</a>
-        </li>
-         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-controller="Login" using ControleContatos.Models; using
                 ControleContatos.Controllers; asp-action="Sair">Sair</a>
         </li>

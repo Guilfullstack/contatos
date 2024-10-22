@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using ControleContatos.Filters;
 using ControleContatos.Models;
 using ControleContatos.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ControleContatos.Controllers
 {
-    // [Route("[controller]")]
+    [PaginaRestritaSomenteAdm]
     public class UsuarioController : Controller
     {
         private readonly ILogger<UsuarioController> _logger;

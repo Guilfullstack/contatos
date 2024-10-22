@@ -46,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/Restrito/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzdHJpdG8vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/media/DataStorage/Dev-sistemas/contatos-controle/Views/Shared/Components/Menu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvTWVudS9EZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -72,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/media/DataStorage/Dev-sistemas/contatos-controle/Views/Usuario/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/DataStorage/Dev-sistemas/contatos-controle/Views/Views.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmlld3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/media/DataStorage/Dev-sistemas/contatos-controle/Views/_ViewImports.cshtml]

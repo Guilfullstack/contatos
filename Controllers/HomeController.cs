@@ -1,8 +1,10 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using contatos.Models;
-namespace ControleContatos.Controllers;
+using ControleContatos.Filters;
 
+namespace ControleContatos.Controllers;
+[PaginaParaUsuarioLogado]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
