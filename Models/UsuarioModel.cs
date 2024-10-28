@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using System.Data.Common;
 using ControleContatos.Enums;
+using ControleContatos.Helper;
 
 namespace ControleContatos.Models
 {
@@ -33,7 +35,10 @@ namespace ControleContatos.Models
         }
         public UsuarioModel( ) { }
         public bool ValidarSenha(string senha){
-            return Senha==senha;
+            return Senha==senha.GerarHash();
+        }
+        public void SetSenhaHash(){
+            Senha=Senha.GerarHash();
         }
 
     }
