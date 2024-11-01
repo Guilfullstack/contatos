@@ -37,12 +37,12 @@ namespace ControleContatos.Repository
             {
                 UsuarioModel dbUsuario = BuscarPorId(usuario.Id);
                 if (dbUsuario == null) throw new Exception("Erro ao atualizar o contato");
-                if (dbUsuario == usuario) return usuario;
                 dbUsuario.Nome = usuario.Nome;
                 dbUsuario.Email = usuario.Email;
                 dbUsuario.Login = usuario.Login;
                 dbUsuario.Perfil = usuario.Perfil;
                 dbUsuario.DataAtualizacao = DateTime.Now;
+                dbUsuario.Senha=usuario.Senha;
                 _bancoContext.Usuarios.Update(dbUsuario);
                 _bancoContext.SaveChanges();
                 return dbUsuario;
@@ -52,6 +52,11 @@ namespace ControleContatos.Repository
                 throw new Exception($"Erro ao atualizar o contato {erro.Message}");
             }
 
+        }
+
+        public UsuarioModel? BuscarPorEmailELogin(string email, string login)
+        {
+            return  _bancoContext.Usuarios.FirstOrDefault(x=>x.Login.ToUpper()==login.ToUpper() && x.Email==email.ToUpper());
         }
 
         public UsuarioModel? BuscarPorId(int id)

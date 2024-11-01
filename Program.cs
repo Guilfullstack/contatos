@@ -19,6 +19,7 @@ internal class Program
         builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
         builder.Services.AddScoped<ISecao,Secao>();
+        builder.Services.AddScoped<IEmail,Email>();
         builder.Services.AddSession(o=>{
             o.Cookie.HttpOnly = true;
             o.Cookie.IsEssential = true;

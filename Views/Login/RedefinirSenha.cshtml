@@ -1,0 +1,33 @@
+@model ControleContatos.Models.RedefinirSenhaModel
+@{
+    Layout = "_LayoutDeslogado";
+    ViewData["Title"] = "Redefinir Senha";
+}
+
+@if (TempData["Menssagem-erro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+    <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+    @TempData["Menssagem-erro"]
+</div>
+}
+
+<form asp-controller="Login" asp-action="EnviarLinkRedefinirSenha">
+    <div class="mb-3">
+        <label asp-for="Login" class="form-label">Login</label>
+        <input asp-for="Login" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        @Html.ValidationMessageFor(x => x.Login)
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" type="email" class="form-control" id="exampleInputPassword1">
+        @Html.ValidationMessageFor(x => x.Email)
+
+    </div>
+
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+    </div>
+
+</form>
