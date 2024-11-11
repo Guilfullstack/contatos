@@ -53,7 +53,6 @@ namespace ControleContatos.Controllers
                      
                     if (usuarioModel != null)
                     {
-                        Console.WriteLine("lOGIN: "+loginModel.Login);
                         if (usuarioModel.ValidarSenha(loginModel.Senha!))
                         {
                             _secao.CriarSecaoDoUsuario(usuarioModel);

@@ -23,11 +23,10 @@ namespace ControleContatos.Repository
             return contato;
         }
 
-        public List<ContatoModel> BuscarTodos()
+        public List<ContatoModel> BuscarTodos(int usuarioId )
         {
-            List<ContatoModel> contatoModelsList = [];
-            contatoModelsList = _bancoContext.Contatos.ToList();
-            return contatoModelsList;
+        
+            return  _bancoContext.Contatos.Where(x=>x.UsuarioId==usuarioId).ToList();
         }
         public ContatoModel BuscarContatoId(int id)
         {

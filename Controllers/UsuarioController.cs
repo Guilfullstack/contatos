@@ -16,11 +16,12 @@ namespace ControleContatos.Controllers
     {
         private readonly ILogger<UsuarioController> _logger;
         private readonly IUsuarioRepository _usuarioRepository;
-
-        public UsuarioController(ILogger<UsuarioController> logger, IUsuarioRepository usuarioRepository)
+        private readonly IContatoRepository _contatoRepository;
+        public UsuarioController(ILogger<UsuarioController> logger, IUsuarioRepository usuarioRepository,IContatoRepository contatoRepository)
         {
             _logger = logger;
             _usuarioRepository = usuarioRepository;
+            _contatoRepository=contatoRepository;
         }
 
         public IActionResult Index()
@@ -127,7 +128,11 @@ namespace ControleContatos.Controllers
 
         }
 
-
+        [HttpGet]
+        public IActionResult ListarContatosPorUsuarioId(int id){
+            var listaContatos=_contatoRepository.BuscarTodos(id);
+            return PartialView("_ContatosUsuario",listaContatos);
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

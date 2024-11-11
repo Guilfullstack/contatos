@@ -15,22 +15,13 @@ namespace ControleContatos.Models
         [Required(ErrorMessage ="Email não informado")]
         [EmailAddress(ErrorMessage ="Email inválido!")]
         public string Email { get; set; }
+        // public DateTime? DataCadastro { get; set; }
 
         [Required(ErrorMessage ="Telefone não informado")]
         [Phone(ErrorMessage ="Numero de celular inválido")]
         public string Celular { get; set; }
-
-        public ContatoModel(int id, string nome, string email,string celular)
-        {
-            Id = id;
-            Nome = nome;
-            Email = email;
-            Celular = celular;
-        }
-        public ContatoModel()
-        {
-            
-        }
+        public int? UsuarioId { get; set; } 
+        public UsuarioModel Usuario { get; set; }
         
     }
 }

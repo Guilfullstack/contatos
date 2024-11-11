@@ -1,0 +1,32 @@
+@model List<ControleContatos.Models.ContatoModel>//Especifica a model que a página vai usar
+
+<table class="table table-striped" id="table-contatos">
+    <thead>
+        <tr class="table-primary">
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Celular</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int contador = 1;
+            @foreach (var contato in Model)
+            {
+
+                <tr class="table-secondary">
+                    <td scope="row">@contador</td>
+                    <td>@contato.Nome</td>
+                    <td>@contato.Celular</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr class="add">
+                <td valign="top" colspan="5">Nenhum contato encontrado</td>
+            </tr>
+        }
+    </tbody>
+</table>

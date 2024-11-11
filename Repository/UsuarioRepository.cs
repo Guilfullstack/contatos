@@ -42,7 +42,7 @@ namespace ControleContatos.Repository
                 dbUsuario.Login = usuario.Login;
                 dbUsuario.Perfil = usuario.Perfil;
                 dbUsuario.DataAtualizacao = DateTime.Now;
-                dbUsuario.Senha=usuario.Senha;
+                dbUsuario.Senha = usuario.Senha;
                 _bancoContext.Usuarios.Update(dbUsuario);
                 _bancoContext.SaveChanges();
                 return dbUsuario;
@@ -54,9 +54,23 @@ namespace ControleContatos.Repository
 
         }
 
+        public UsuarioModel AtualizarSenha(AlterarSenhaModel alterarSenhaModel)
+        {
+            UsuarioModel usuarioModel = BuscarPorId(alterarSenhaModel.Id);
+            if (usuarioModel == null) throw new Exception("Houve um erro na atualização da senha, usuario não encontrado!");
+            if (!usuarioModel.ValidarSenha(alterarSenhaModel.SenhaAtual)) throw new Exception("Senha atual não confere");
+            if (usuarioModel.ValidarSenha(alterarSenhaModel.NovaSenha)) throw new Exception("Nova senha deve ser diferente da senha atual");
+
+            usuarioModel.SetNovaSenha(alterarSenhaModel.NovaSenha);
+            usuarioModel.DataAtualizacao = DateTime.Now;
+            _bancoContext.Usuarios.Update(usuarioModel);
+            _bancoContext.SaveChanges();
+            return usuarioModel;
+        }
+
         public UsuarioModel? BuscarPorEmailELogin(string email, string login)
         {
-            return  _bancoContext.Usuarios.FirstOrDefault(x=>x.Login.ToUpper()==login.ToUpper() && x.Email==email.ToUpper());
+            return _bancoContext.Usuarios.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper() && x.Email == email.ToUpper());
         }
 
         public UsuarioModel? BuscarPorId(int id)
@@ -66,8 +80,8 @@ namespace ControleContatos.Repository
 
         public UsuarioModel BuscarPorLogin(string login)
         {
-            return _bancoContext.Usuarios.FirstOrDefault(x=> x.Login.ToUpper() == login.ToUpper());
-            
+            return _bancoContext.Usuarios.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
+
         }
 
         public List<UsuarioModel> BuscarTodosUsuarios()
@@ -75,7 +89,9 @@ namespace ControleContatos.Repository
             try
             {
                 List<UsuarioModel> usuarioList = [];
-                usuarioList = _bancoContext.Usuarios.ToList();
+                usuarioList = _bancoContext.Usuarios
+                    .Include(x=>x.Contatos)
+                    .ToList();
                 return usuarioList;
             }
             catch (System.Exception erro)

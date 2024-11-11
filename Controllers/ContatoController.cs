@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using ControleContatos.Filters;
+using ControleContatos.Helper;
 using ControleContatos.Models;
 using ControleContatos.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -16,17 +17,20 @@ namespace ControleContatos.Controllers
     public class ContatoController : Controller
     {
         private readonly ILogger<ContatoController> _logger;
+        private readonly ISecao _secao;
         //Inserir a dependencia 
         private readonly IContatoRepository _contatoRepository;
-        public ContatoController(ILogger<ContatoController> logger, IContatoRepository contatoRepository)
+        public ContatoController(ILogger<ContatoController> logger, IContatoRepository contatoRepository,ISecao secao)
         {
             _logger = logger;
             _contatoRepository = contatoRepository;
+            _secao=secao;
         }
 
         public IActionResult Index()
         {
-            var listaContatos = _contatoRepository.BuscarTodos();
+            var usuario=_secao.BuscarSecaoDoUsuario();
+            List<ContatoModel> listaContatos = _contatoRepository.BuscarTodos(usuario.Id);
             return View(listaContatos);
         }
         public IActionResult Criar()
@@ -47,6 +51,8 @@ namespace ControleContatos.Controllers
                 if (ModelState.IsValid)
                 {
                     TempData["Menssagem-sucesso"] = $"Contato {contatoModel.Nome} salvo com sucesso:";
+                     var usuario=_secao.BuscarSecaoDoUsuario();
+                     contatoModel.UsuarioId=usuario.Id;
                     _contatoRepository.AddContato(contatoModel);
                     return RedirectToAction("Index");
                 }
@@ -68,6 +74,8 @@ namespace ControleContatos.Controllers
                 if (ModelState.IsValid)
                 {
                     TempData["Menssagem-sucesso"] = $"Contato alterado com sucesso:";
+                     var usuario=_secao.BuscarSecaoDoUsuario();
+                     contato.UsuarioId=usuario.Id;
                     _contatoRepository.Atualizar(contato);
                     return RedirectToAction("Index");
                 }

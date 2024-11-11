@@ -22,6 +22,7 @@ namespace ControleContatos.Models
         public PerfilEnum? Perfil{ get; set; }
         public DateTime DataCadastro { get; set; }
         public DateTime? DataAtualizacao { get; set; }
+        public virtual List<ContatoModel>?Contatos{get; set;}
         public UsuarioModel(int id, string name, string email,string login,string senha,PerfilEnum perfil,DateTime dataCadastro,DateTime? dataAtualizacao)
         {
             Id=id;
@@ -39,6 +40,9 @@ namespace ControleContatos.Models
         }
         public void SetSenhaHash(){
             Senha=Senha.GerarHash();
+        }
+        public void SetNovaSenha(string novaSenha){
+            Senha=novaSenha.GerarHash();
         }
         public string GerarNovaSenha(){
             string novaSenha=Guid.NewGuid().ToString().Substring(0,8);

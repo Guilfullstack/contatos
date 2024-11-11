@@ -30,7 +30,8 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Celular</th>
-                <th scope="col"></th>
+                <th scope="col">Data Cadastro</th>
+                <th scope="col">#</th>
             </tr>
         </thead>
         <tbody>
@@ -44,7 +45,8 @@
                         <td>@contato.Nome</td>
                         <td>@contato.Email</td>
                         <td>@contato.Celular</td>
-                        <td>
+                        <td>contato.DataCadastro</td>
+                        <td>    
                             <div class="btn-group" role="group">
                                 <a roule="button" class="btn btn-primary" asp-controller="Contato"
                                     asp-action="Editar" asp-route-id="@contato.Id">Editar</a>

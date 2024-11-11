@@ -14,6 +14,7 @@ namespace ControleContatos.Repository
         public List<UsuarioModel> BuscarTodosUsuarios();
         public UsuarioModel BuscarPorId(int id);  
         public UsuarioModel Atualizar(UsuarioModel usuario);
+        public UsuarioModel AtualizarSenha(AlterarSenhaModel alterarSenhaModel);
         public  Task<bool> Deletar(int id);  
     }
 }
